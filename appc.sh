@@ -13,7 +13,7 @@ acbuild --debug begin
 trap "{ export EXT=$?; acbuild --debug end && exit $EXT; }" EXIT
 
 # Name the ACI
-acbuild --debug set-name lukebond/demo-api-redis
+acbuild --debug set-name controlplane/demo-api-redis
 
 # Based on alpine
 acbuild --debug dep add quay.io/coreos/alpine-sh

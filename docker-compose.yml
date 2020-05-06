@@ -1,5 +1,5 @@
 api:
-  image: lukebond/demo-api-redis
+  image: controlplane/demo-api-redis
   ports:
     - "9000"
   links:
