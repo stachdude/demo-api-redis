@@ -2,9 +2,13 @@ var ip = require('ip');
 var redis = require('redis');
 var restify = require('restify');
 
-var db = redis.createClient({ host: process.env.REDIS_HOST || 'redis' });
+var db = redis.createClient({ host: process.env.REDIS_HOST || '0.0.0.0' });
 var server = restify.createServer({
   name: 'demo'
+});
+
+db.on('error', (err) => {
+  console.log("Redis Error " + err)
 });
 
 var message = process.env.MESSAGE || 'Hello, world';
